@@ -40,7 +40,7 @@
         //////////////////////////////////////////////////////////////////
 
         var box = jQuery(".box"); // reference to the HTML .box element
-        var boxwdith = box
+        var boxWidth = box.width();
         var board = jQuery(".board"); // reference to the HTML .board element
         var boardWidth = board.width(); // the maximum X-Coordinate of the screen
 
@@ -84,7 +84,7 @@
         function update() {
           positionX = positionX + speed;
           moveBoxTo(positionX);
-           if (posotionX + boxWidth > boardWidth) {
+           if (positionX + boxWidth > boardWidth) {
               speed *= -1;
            }
            if (positionX < 0) {
