@@ -53,7 +53,7 @@ function makeGhost(id) {
   ghost.x = Math.random() * maXX + ghostRadius;
   ghost.y = Math.random() * maxY + ghostRadius;
   ghost.speedX = decideSpeed();
-  ghost.speedY = desideSpeed();
+  ghost.speedY = decideSpeed();
 
   // assign a random color for the ghost's glow
   const colors = [
@@ -80,7 +80,8 @@ function decideSpeed() {
 
 // this generates an id for a ghost given the ghost's number
 function getId(number) {
-  return ("ghost" + number); 
+  return ("ghost" + number);
+  \
 }
 
 // this adds a ghost into the HTML
@@ -102,14 +103,12 @@ function addNewGhostElement(ghost, id) {
 //////////////////
 
 // this should move all of the ghosts
-function update () {
-
-}
+function update() {
   // loop over the ghosts array. We use the maxGhosts variable instead of ghosts.length
   // to make seeing issues in the debugger slightly easier (in practice, you should use
   // ghosts.length, but do NOT change it here)
   for (var i = 0; i < maxGhosts; i++) {
-    var ghost = ghosts[j];
+    var ghost = ghosts[i];
 
     // move the ghost
     moveGhost(ghost);
@@ -123,6 +122,7 @@ function update () {
     // make sure the ghost is oriented correctly
     updateOrientation(ghost);
   }
+}
 
 //////////////////////////
 // update helper functions
